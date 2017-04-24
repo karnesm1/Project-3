@@ -18,14 +18,12 @@ Distance::Distance(int n){
     int i;
     int count=n;
     DistArray=new Dist[n];
-        DistArray[0].tentDist=0;
-        DistArray[0].visited=false;
-        DistArray[0].parent=-1;
     for(i=1;i<n;i++){
         DistArray[i].tentDist=INT_MAX;
         DistArray[i].visited=false;
         DistArray[i].parent=-1;
         }
+    DistArray[0].tentDist=0;
 }
 /*This deletes every in the graph and the graph itself
 
@@ -102,14 +100,14 @@ int Distance::visitNext(){
     if(getVisit(0)==false){
         return(0);
     }
-    int dist=getDistance(1);
-    int next =2;
+    int dist=INT_MAX;
+    int next;
     //this looks through the array to find a node that is smaller and has not been visited yet
   for(int i=1;i<count;i++){  
-      if(dist>getDistance(i) && getVisit(i)==false)
+      if(dist>getDistance(i) && getVisit(i)==false){
           dist=getDistance(i);
       next = i;
       }   
-  
+  }
     return(next);
 }

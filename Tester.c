@@ -11,8 +11,8 @@ This main function will add various edges to an adjacency list called EdgeGraph 
 ------------------------------------------------------------------*/
 int main(){
     /*This initializes an int count to a number of ten, an Adjacency list, called EdgeGraph, that is currently set to have 30 nodes, and a distance array called DistArray that is initialized to count.  Each of these can be changed by reading in a file but as of now they are set to a specific amount. */
-    int count=10;
-    AdjList* EdgeGraph = new AdjList(30); 
+    int count=5;
+    AdjList* EdgeGraph = new AdjList(16); 
     Distance* DistArray= new Distance(count);
     
 /*These create various edges between the nodes of the EdgeGraph. It creates an edge going in both directions as this is an undirected graph.  If it is set as addEdge(x,y,z) then x is the node in the array, y is the sink or destination, and z is the weight of the edge.  This is called as a pointer of the adjacency list.  This can be accomplished more effeciently by reading in from a graph */
@@ -85,6 +85,8 @@ for(i=0;i=count;i++){
         }
             //the neighbor then becomes the next struct in the edgeGraph
             neighbor=EdgeGraph->getNext();
+            cout<<DistArray->getVisit(2)<<endl;
+             cout<<DistArray->getDistance(1)<<endl;
     }
    //this continues until all points in the edgeGraph have been completed
 }

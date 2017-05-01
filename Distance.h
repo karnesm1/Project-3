@@ -86,7 +86,7 @@ This will check to see what the next node that needs to be visited that has the 
 Preconditions:an array with nodes.
 Postconditions:the next node to be visited will be returned
 ------------------------------------------------------------------*/
-        int visitNext();
+        int visitNext(int n);
 private:
     //this is our array that holds our distance nodes
        Dist*DistArray;

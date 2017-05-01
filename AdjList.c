@@ -69,9 +69,9 @@ Preconditions: There is a current node.
 Postconditions: The node next to the current node will be added.
 ------------------------------------------------------------------*/
 Node* AdjList::getNext(){
-    Node*temp=current;
+
     current=current->next;
-    return (temp);
+    return (current);
 }
 
 

@@ -20,7 +20,7 @@ Distance::Distance(int n){
     DistArray=new Dist[n];
     for(i=1;i<n;i++){
         DistArray[i].tentDist=INT_MAX;
-        DistArray[i].visited=false;
+        DistArray[i].visited==false;
         DistArray[i].parent=-1;
         }
     DistArray[0].tentDist=0;
@@ -96,18 +96,17 @@ This will check to see what the next node that needs to be visited that has the 
 Preconditions:an array with nodes.
 Postconditions:the next node to be visited will be returned
 ------------------------------------------------------------------*/
-int Distance::visitNext(){
-    if(getVisit(0)==false){
-        return(0);
-    }
-    int dist=INT_MAX;
-    int next;
-    //this looks through the array to find a node that is smaller and has not been visited yet
-  for(int i=1;i<count;i++){  
-      if(dist>getDistance(i) && getVisit(i)==false){
-          dist=getDistance(i);
-      next = i;
-      }   
-  }
-    return(next);
+int Distance::visitNext(int n){
+    int distance=INT_MAX;
+    int node;
+    int count = n;
+    //this takes in an int which is the amount of nodes in the array.  it then runs through the nodes finding the one with the lowest tent dist that has not been visited yet
+  for(int i=0 ; i < count; i++){  
+      if(distance > getDistance(i) && getVisit(i)==false){
+          distance = getDistance(i);
+            node = i;
+                            }   
+            }
+    
+    return(node);
 }

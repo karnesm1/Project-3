@@ -74,7 +74,7 @@ private:
     int count;
 
     //this is our array of nodes initialized to 100, as this is enough for the purposes we have
-    Node*List[100];
+    Node*List[20];
     
     //this is a node that is used to find our current node in the array
     Node*current;
